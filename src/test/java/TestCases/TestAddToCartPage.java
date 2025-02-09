@@ -5,11 +5,17 @@ import Utility.DataSet;
 import Utility.DriverSetup;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class TestAddToCartPage extends DriverSetup {
 
     AddToCartPage addToCartPage = new AddToCartPage();
+
+    @AfterMethod
+    public void AddScreenShotAfterTest(){
+        addToCartPage.addScreenshot();
+    }
 
     @Test(dataProvider = "validCredentials", dataProviderClass = DataSet.class,priority = 0)
     public void TestProductVisibleOnCartBadge(String user, String pass){

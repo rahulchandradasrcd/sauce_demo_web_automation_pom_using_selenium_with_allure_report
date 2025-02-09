@@ -4,6 +4,7 @@ import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
@@ -86,12 +87,8 @@ public class BasePage {
     public void HandleDropdown(By locator, String text) {
         WebElement dropdown = getElement(locator);
         dropdown.click();
-        for (WebElement option : dropdown.findElements(By.xpath("//li"))) {
-            if (option.getText().equals(text)) {
-                option.click();
-                break;
-            }
-        }
+        Select select = new Select(dropdown);
+        select.selectByValue(text);
     }
 
     public void webDriverWait(By locator){

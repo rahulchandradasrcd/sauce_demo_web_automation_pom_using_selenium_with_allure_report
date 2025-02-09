@@ -19,4 +19,12 @@ public class DataSet {
         };
         return data;
     }
+
+    @DataProvider(name = "lockedOutUserCredentials")
+    public static Object LockedOutUserCredentials(){
+        Object[][] data = {
+                {"locked_out_user", "secret_sauce"}
+        };
+        return data;
+    }
 }

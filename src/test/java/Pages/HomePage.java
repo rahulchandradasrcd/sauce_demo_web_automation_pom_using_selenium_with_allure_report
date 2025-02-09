@@ -12,7 +12,6 @@ public class HomePage extends BasePage{
     public By product3 = By.xpath("//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']");
     public By cart_button = By.xpath("//a[@class='shopping_cart_link']");
 
-    /*TestLoginPage testLoginPage = new TestLoginPage();*/
     LoginPage loginPage = new LoginPage();
 
     public void loadHomePage(String user, String pass){

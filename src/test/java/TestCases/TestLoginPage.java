@@ -8,11 +8,17 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import net.bytebuddy.build.Plugin;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class TestLoginPage extends DriverSetup {
 
     LoginPage loginPage = new LoginPage();
+
+    @AfterMethod
+    public void ddScreenShotAfterTest(){
+        loginPage.addScreenshot();
+    }
 
     @Test(dataProvider = "validCredentials", dataProviderClass = DataSet.class,priority = 0)
     @Description("Login With ValidCredentials")
