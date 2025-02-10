@@ -41,22 +41,26 @@ The goal of this project is to ensure the smooth functionality of the website by
 │   |            └── **saucedemo/**  
 │   │               ├── **pages/**                 **# Page Object Models (POM)**
 |   |                    ├── **BasePage.java**     **# Base class with common setup** 
-│   |                    ├── **HomePage.java**
-|   |                    ├── **LoginPage.java**
-|   |                    ├── **WriterPage.java**
-|   |                    ├── **ShoppingCartPage.java**
+│   |                    ├── **LoginPage.java**
+|   |                    ├── **HomePage.java**
+|   |                    ├── **AddToCartPage.java**
 |   |                    ├── **CheckOutPage.java**
-│   |                    └── **LogoutPage.java**   
+|   |                    ├── **SortingProductPage.java**
+│   |                    ├── **LogOutPage.java**
+|   |                    ├── **LockedOutUserPage.java**
+|   |                    └── **CartBadgeCountValidationPage.java**
 │   │               ├── **utils/**                 **# Helper/Utility classes**
 |   |                    ├── **DataSet.java**
 │   |                    └── **DriverSetup.java**  
 |   |               └── **tests/**                 **# TestNG test cases**  
-│                        ├── **TestHomePage.java**
-|                        ├── **TestLoginPage.java**
-|                        ├── **TestWriterPage.java**
-|                        ├── **TestShoppingCartPage.java**
-|                        ├── **TestCheckoutPage.java**
-│                        └── **TestLogOutPage.java**   
+│                        ├── **TestLoginPage.java**
+|                        ├── **TestHomePage.java**
+|                        ├── **TestAddToCartPage.java**
+|                        ├── **TestCheckOutPage.java**
+|                        ├── **TestSortingProductPage.java**
+|                        ├── **TestLogOutPage.java**
+|                        ├── **TestLockedOutUserPage.java**
+│                        └── **TestCartBadgeCountValidationPage.java**   
 ├── **pom.xml**                                    **# Maven dependencies and build configuration**  
 ├── **allure-results/**                            **# Allure test execution results**
 ├── **Testng.xml/**                                **# Project Html Documentation to run all test**
