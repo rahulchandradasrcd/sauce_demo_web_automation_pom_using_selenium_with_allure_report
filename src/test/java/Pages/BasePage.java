@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 import static Utility.DriverSetup.getDriver;
 
@@ -20,6 +22,10 @@ public class BasePage {
 
     public WebElement getElement(By locator){
         return getDriver().findElement(locator);
+    }
+
+    public List<WebElement> getElements(By locator) {
+        return getDriver().findElements(locator);
     }
 
     public void clickOnElement(By locator){
@@ -48,14 +54,6 @@ public class BasePage {
         }
     }
 
-    public Boolean is_selected(By locator){
-        try {
-            return getElement(locator).isSelected();
-        }catch (Exception e){
-            return false;
-        }
-    }
-
     public Boolean is_enabled(By locator){
         try {
             return getElement(locator).isEnabled();
@@ -64,24 +62,8 @@ public class BasePage {
         }
     }
 
-    public void GetText(By locator){
-        getElement(locator).getText();
-    }
-
     public String getErrorMassage(By locator){
         return getElement(locator).getText();
-    }
-
-    public void HoverElement(By locator){
-        Actions actions = new Actions(getDriver());
-        actions.moveToElement(getElement(locator)).build().perform();
-        actions.click(getElement(locator)).build().perform();
-    }
-
-    public void ScrollElement(By locator){
-        JavascriptExecutor scroll = (JavascriptExecutor) getDriver();
-        WebElement next_page = getElement(locator);
-        scroll.executeScript("arguments[0].scrollIntoView()", next_page);
     }
 
     public void HandleDropdown(By locator, String text) {
@@ -89,20 +71,6 @@ public class BasePage {
         dropdown.click();
         Select select = new Select(dropdown);
         select.selectByValue(text);
-    }
-
-    public void webDriverWait(By locator){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
-    public String getAttributeName(By locator){
-        return getElement(locator).getAttribute("Message");
-    }
-
-    public void BrowserNavigate(){
-        getDriver().navigate().back();
     }
 
     public void addScreenshot() {

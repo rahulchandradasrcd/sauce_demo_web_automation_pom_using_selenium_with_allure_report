@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="4">
+    <test verbose="2" preserve-order="true"
+          name="D:/Rahul Personal/Web Automation/SauceDemoAutomationPOM/SauceDemoAutomationPOM/src/test/java/TestCases">
+        <classes>
+            <class name="TestCases.TestAddToCartPage">
+                <methods>
+                    <include name="TestProductVisibleOnCartBadge"/>
+                    <include name="removeAndAddProductFromCartBadge"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestCartBadgeCountValidationPage">
+                <methods>
+                    <include name="ValidateCartCountBadge"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestCheckOutPage">
+                <methods>
+                    <include name="AutomateCheckOutAndVerify"/>
+                    <include name="FinishOrderAndVerifyConfirmMassage"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestHomePage">
+                <methods>
+                    <include name="TestPageTitle"/>
+                    <include name="TestPageUrl"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestLockedOutUserPage">
+                <methods>
+                    <include name="VerifyLockedOutUserInLogin"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestLogOutPage">
+                <methods>
+                    <include name="LogOutAndVerify"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestLoginPage">
+                <methods>
+                    <include name="LoginWithValidCredentials"/>
+                    <include name="LoginWithInValidCredentials"/>
+                </methods>
+            </class>
+            <class name="TestCases.TestSortingProductPage">
+                <methods>
+                    <include name="verifyProductDisplayedInCorrectOrderPriceLowToHigh"/>
+                    <include name="verifyProductDisplayedInCorrectOrderPriceHighToLow"/>
+                    <include name="verifyProductDisplayedInCorrectOrderNameAToZ"/>
+                    <include name="verifyProductDisplayedInCorrectOrderNameZToA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
